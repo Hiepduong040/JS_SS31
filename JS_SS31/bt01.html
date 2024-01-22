@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function findLongestWordLength(str) {
+        var arr1 = str.match(/\w[a-z]{0,}/gi);
+        var result = arr1[0];
+        for (let i = 1; i < arr1.length; i++) {
+          if (result.length < arr1[i].length) {
+            result = arr1[i];
+          }
+        }
+        console.log(result, arr1.indexOf(result));
+        return result;
+      }
+      findLongestWordLength("The quick brown for jumped over the lazy dog");
+    </script>
+  </body>
+</html>
